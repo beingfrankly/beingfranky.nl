@@ -8,7 +8,7 @@ export default function Layout({ children }) {
         <Link href="/blog"><a>Blog</a></Link>
       </nav>
 
-      <main className="prose lg:prose-xl">{children}</main>
+      <main className="p-8 prose lg:prose-xl">{children}</main>
 
       <footer className="p-8">
         © 2021-present Frank van Eldijk-Smeding. All Rights Reserved.
