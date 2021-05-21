@@ -1,7 +1,7 @@
-import { getLatestPosts } from '../utils/mdxUtils'
+import { getLatestPosts } from '../../utils/mdxUtils'
 import Link from 'next/link'
 
-export default function Home({posts}) {
+export default function Blog({posts}) {
   return (
     <>
       <h1>Latest blogs</h1>

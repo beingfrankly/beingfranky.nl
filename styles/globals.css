@@ -1,16 +1,37 @@
-html,
+@import './remedy.css';
+@import './typography.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply subpixel-antialiased;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+#__next {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns:
+    1fr
+    min(65ch, 100%)
+    1fr;
+  grid-template-rows:
+    auto
+    1fr
+    auto;
 }
 
-* {
-  box-sizing: border-box;
+#__next > main {
+  grid-column: 2;
+}
+
+nav, footer {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+nav > a {
+  @apply text-lg;
 }
