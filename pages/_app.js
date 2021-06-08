@@ -16,7 +16,6 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:title" content="Frank van Eldijk-Smeding"/>
           <meta name="twitter:description" content="Making accessibility (a11y) more accessible for frontend developers."></meta>
           <meta property="og:url" content="https://www.beingfrankly.nl"/>
-          <link rel="canonical" href="https://www.www.beingfrankly.nl"/>
         <script async defer data-domain="beingfrankly.nl" src="https://plausible.io/js/plausible.js"></script>
       </Head>
       <Layout><Component {...pageProps} /></Layout>
