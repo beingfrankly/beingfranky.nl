@@ -66,7 +66,7 @@ Now we know how to use and associate a label with an input. But are we limited t
 
 ## Labelable, excuse me?
 
-As a non English speaker, that word is just a mouthful for me. Moving on. So this term groups a list of elements together that should be paired with a label. I won't go into it further details what each element does on its own.
+As a non English speaker, that word is just a mouthful for me. Moving on. So this term groups a list of elements together that should be paired with a label[^3]. I won't go into it further details what each element does on its own.
 
 Labelable fields:
 - button
@@ -76,6 +76,10 @@ Labelable fields:
 - progress
 - select
 - textarea
+
+The odd one in the list above is the `button` element. Even though it's considered a labelable element it should **not** be paired with a label. This is because the button already comes with a label, which is the text value inside the tags[^4]. When using `<input type="button" value="Sign up"/>` the label comes from it's `value` attribute.
+
+ > Credit goes to [InHuOfficial](https://dev.to/inhuofficial) for pointing out that I've missed this in the original post.
 
 ## Conclusion
 
@@ -87,5 +91,7 @@ Labelable fields:
 In the next bite-sized blog we’re going to learn what to do when we can’t show a label visually. For whatever reason that might be.
 
 ### References
-[^1]: MDN Label documentation, [https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
-[^2]: Lack of support for **implicit** labels [https://a11ysupport.io/tests/html_label_element_implicit#support-summary-by-at-sr](https://a11ysupport.io/tests/html_label_element_implicit#support-summary-by-at-sr)
+[^1]: [Read more - MDN Label documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+[^2]: [Read more  - Lacking support for **implicit** labels](https://a11ysupport.io/tests/html_label_element_implicit#support-summary-by-at-sr)
+[^3]: [Read more - HTML labelable elements](https://html.spec.whatwg.org/multipage/forms.html#category-label)
+[^4]: [Read more - Labeling buttons](https://www.w3.org/WAI/tutorials/forms/labels/#labeling-buttons)
