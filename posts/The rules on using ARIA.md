@@ -1,1 +1,0 @@
-../../../../Library/Mobile Documents/iCloud~md~obsidian/Documents/Second brain/_Projects/Building BeingFrankly/Content/posts/The rules on using ARIA.md

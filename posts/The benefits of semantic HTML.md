@@ -1,1 +1,0 @@
-../../../../Library/Mobile Documents/iCloud~md~obsidian/Documents/Second brain/_Projects/Building BeingFrankly/Content/posts/The benefits of semantic HTML.md
