@@ -45,7 +45,7 @@ When you do a search for **placeholder** combined with **accessibility**, you'll
 The main takeaway I want to share about the `placeholder` attribute is that we shouldn’t depend on it. The intent of a `placeholder` isn’t the same as the intent of a `label`. And this is important for assistive technologies, like screen readers. To give you an example. In 2019 JAWS, one the biggest screen readers[^1], changed how they processed the `placeholder` attribute. Before this change the `placeholder` attribute was completely ignored.
 
 ### Voice Control can’t be fully utilised 
-The second problem is that assistive technology like Voice Control can’t interact with the search field directly. What do I mean by that? Well, it's not possible to use the command **“Click search”**. This command in Voice Control lets you select any interactible element based on the name of the `label`. Considering that we don't have a label (yet), we're not able to use this command.
+The second problem is that assistive technology like Voice Control can’t interact with the search field directly. What do I mean by that? Well, it's not possible to use the command **“Click search”**. This command in Voice Control lets you select any interactive element based on the name of the `label`. Considering that we don't have a label (yet), we're not able to use this command.
 
 ## So how could we solve this?
 We have a couple of options at our disposal:
