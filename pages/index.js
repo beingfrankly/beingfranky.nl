@@ -1,4 +1,4 @@
-import { getLatestPosts } from '../utils/mdxUtils'
+import { getAllPosts } from '../utils/mdxUtils'
 import Link from 'next/link'
 
 export default function Home({posts}) {
@@ -7,7 +7,7 @@ export default function Home({posts}) {
       <h1>Latest blogs</h1>
       <ul>
         {posts.map(post => {
-          return (<Link href={`blog/${post.id}`}><a>{post.id}</a></Link>)
+          return (<li><Link href={`/blog/${encodeURIComponent(post.slug)}`}><a>{post.title}</a></Link></li>)
         })}
       </ul>
     </>
@@ -15,7 +15,7 @@ export default function Home({posts}) {
 }
 
 export const getStaticProps = async () => {
-  const latestPosts = getLatestPosts();
+  const latestPosts = getAllPosts();
 
   return {
     props: {

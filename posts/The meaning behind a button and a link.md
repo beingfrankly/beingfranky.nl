@@ -1,0 +1,1 @@
+../../../../Library/Mobile Documents/iCloud~md~obsidian/Documents/Second brain/_Projects/Building BeingFrankly/Content/posts/The meaning behind a button and a link.md

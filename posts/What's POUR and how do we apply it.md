@@ -1,0 +1,1 @@
+../../../../Library/Mobile Documents/iCloud~md~obsidian/Documents/Second brain/_Projects/Building BeingFrankly/Content/posts/What's POUR and how do we apply it.md
