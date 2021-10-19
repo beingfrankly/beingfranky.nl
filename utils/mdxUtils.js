@@ -1,24 +1,30 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+const fs = require('fs');
+const path = require('path');
+const matter = require('gray-matter');
 
 // POSTS_PATH is useful when you want to get the path to a specific file
-export const POSTS_PATH = path.join(process.cwd(), 'posts')
+const POSTS_PATH = path.join(process.cwd(), 'posts')
 
 // postFilePaths is the list of all mdx files inside the POSTS_PATH directory
-export const postFilePaths = fs
+const postFilePaths = fs
   .readdirSync(POSTS_PATH)
   .filter((path) => /\.md?$/.test(path));
 
-export function getAllPosts() {
-  const fileNames = fs.readdirSync(POSTS_PATH)
+  // console.log(postFilePaths);
+
+const getAllPosts = () => {
+  const fileNames = postFilePaths;
+
+  // console.log(fileNames);
+
+
   const allPostsData = fileNames
     .map(fileName => createPost(fileName))
-    .filter(post => post.slug !== null && typeof post.slug !== 'undefined');
-  // Sort posts by date
+    .filter(post => post.data.slug !== null && typeof post.data.slug !== 'undefined');
+
   return allPostsData.sort((a, b) => {
 
-    if (a.published_on < b.published_on) {
+    if (a.data.published_on < b.data.published_on) {
       return 1
     } else {
       return -1
@@ -26,11 +32,11 @@ export function getAllPosts() {
   })
 }
 
-export function getPostBySlug(slug) {
-  return getAllPosts().find(post => post.slug === slug);
+const getPostBySlug = (slug) => {
+  return getAllPosts().find(post => post.data.slug === slug);
 }
 
-function createPost(fileName) {
+const createPost = (fileName) => {
 
     // Remove ".md" from file name to get id
     const postPath = fileName;
@@ -40,11 +46,18 @@ function createPost(fileName) {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+    const { data, content } = matter(fileContents);
+    // console.log({data});
     // Combine the data with the id
-    return {
-      ...matterResult.data,
+
+    const post = {
+      data,
+      content,
       postPath,
       title
-    };
+    }
+
+    return post;
   };
+
+  module.exports = {getAllPosts, getPostBySlug, postFilePaths}

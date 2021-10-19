@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:sitemap": "node ./build-helpers/generate-sitemap.js",
+    "prebuild": "npm run build:sitemap"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",

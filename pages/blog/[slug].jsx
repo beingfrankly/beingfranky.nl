@@ -1,10 +1,7 @@
-import fs from 'fs'
-import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Head from 'next/head'
-import path from 'path'
-import { getAllPosts, getPostBySlug, postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
+import { getAllPosts, getPostBySlug } from '../../utils/mdxUtils'
 
 export default function BlogPost({ source, frontMatter, canonicalURL }) {
   return (
@@ -18,40 +15,31 @@ export default function BlogPost({ source, frontMatter, canonicalURL }) {
   )
 }
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug);
   const canonicalURL = `https://www.beingfrankly.nl/blog/${params.slug}`;
-  const postFilePath = path.join(POSTS_PATH, `${post.postPath}`)
-  const source = fs.readFileSync(postFilePath)
+  // console.log({post});
 
-  const { content, data } = matter(source)
-
-  const mdxSource = await serialize(content, {
+  const mdxSource = await serialize(post.content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
     },
-    scope: data,
+    scope: post.data,
   })
 
   return {
     props: {
       source: mdxSource,
-      frontMatter: data,
+      frontMatter: post.data,
       canonicalURL: canonicalURL
     },
   }
 }
 
-export const getStaticPaths = async () => {
-  postFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    // Map the path into the static paths object required by Next.js
-    .map((slug) => ({ params: { slug } }))
-
-  const paths = getAllPosts().map(post => post.slug).map(slug => ({ params: { slug } }));
+export async function getStaticPaths() {
+  const paths = getAllPosts().map(post => post.data.slug).map(slug => ({ params: { slug } }));
 
   return {
     paths,
