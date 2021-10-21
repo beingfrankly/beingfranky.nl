@@ -5,10 +5,11 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
     "start": "next start",
     "lint:staged": "lint-staged",
-    "build:sitemap": "node ./build-helpers/generate-sitemap.ts"
+    "build:sitemap": "node ./build-helpers/generate-sitemap.ts",
+    "prebuild": "npm run build:sitemap",
+    "build": "next build"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
