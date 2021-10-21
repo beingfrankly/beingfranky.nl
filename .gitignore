@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# ignore generated files
+./public/sitemap.xml
