@@ -1,15 +1,20 @@
 ---
 type: blog
 title: The differences between the ARIA labeling variants
-published: false
-published_on: "2021-10-18"
-category:
-tags: []
+published: true
+published_on: '2021-10-18'
+tags:
+  - accessibility
+  - aria
 description: small description on the blog post
-keywords: [aria-label, aria-labelledby, aria-describedby]
+keywords:
+  - accessibility
+  - aria-label
+  - aria-labelledby
+  - aria-describedby
 slug: differences-between-aria-labeling-variants
-status: writing
 id: 2021w41b1
+updatedOn: '2021-10-21T10:29:17.035Z'
 ---
 
 # The differences between the ARIA labeling variants

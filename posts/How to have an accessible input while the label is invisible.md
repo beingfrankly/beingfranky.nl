@@ -2,14 +2,22 @@
 type: blog
 title: An accessible input without a visible label
 published: true
-published_on: "2021-10-03"
-category: accessibility
-tags: []
+published_on: '2021-10-03'
+tags:
+  - accessibility
+  - aria
+  - labels
+  - css
 description: small description on the blog post
-keywords: []
+keywords:
+  - accessibility
+  - screen reader
+  - labels
+  - css
+  - accessibility tree
 slug: accessible-input-without-label
-status: published
 id: 2021w39b1
+updatedOn: '2021-10-21T10:29:17.033Z'
 ---
 
 # How to have an accessible input while the label isn’t present?

@@ -1,15 +1,21 @@
 ---
 type: blog
-title: The what, why and how behind labels
+title: 'The what, why and how behind labels'
 published: true
-published_on: "2021-06-09"
-category: accessibility
-tags: []
+published_on: '2021-06-09'
+tags:
+  - accessibility
+  - labels
 description: As this is an introduction
-keywords: [labels, explicit, implicit]
+keywords:
+  - accessibility
+  - labels
+  - explicit
+  - implicit
+  - input
 slug: what-why-and-how-on-labels
-status: published
 id: 2021w23b1
+updatedOn: '2021-10-21T10:29:17.036Z'
 ---
 
 # The what, why and how on labels
