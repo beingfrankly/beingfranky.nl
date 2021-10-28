@@ -6,6 +6,7 @@
     "prepare": "husky install",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "start": "next start",
+    "export": "next export",
     "lint:staged": "lint-staged",
     "build:sitemap": "node ./build-helpers/generate-sitemap.ts",
     "prebuild": "npm run build:sitemap",
