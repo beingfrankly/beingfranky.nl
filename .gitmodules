@@ -1,0 +1,3 @@
+[submodule "beingfrankly-content"]
+	path = beingfrankly-content
+	url = https://github.com/beingfrankly/beingfrankly-content
