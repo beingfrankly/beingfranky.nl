@@ -7,7 +7,7 @@ export default function BlogPost({ source, frontMatter, canonicalURL }) {
   return (
     <div className="blog-container">
       <Head>
-        <title>{frontMatter.title}</title>
+        <title>{frontMatter.title} | BeingFrankly</title>
         <link rel="canonical" href={ canonicalURL } />
       </Head>
       <MDXRemote {...source} />
@@ -18,7 +18,6 @@ export default function BlogPost({ source, frontMatter, canonicalURL }) {
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug);
   const canonicalURL = `https://www.beingfrankly.nl/blog/${params.slug}`;
-  // console.log({post});
 
   const mdxSource = await serialize(post.content, {
     // Optionally pass remark/rehype plugins
