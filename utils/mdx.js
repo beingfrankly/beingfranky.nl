@@ -4,7 +4,7 @@ const matter = require("gray-matter");
 const { bundleMDX } = require("mdx-bundler");
 
 const ROOT = process.cwd();
-const POSTS_PATH = path.join(process.cwd(), "beingfrankly-content");
+const POSTS_PATH = path.join(process.cwd(), "posts");
 
 const getFileContent = (filename) => {
   return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
