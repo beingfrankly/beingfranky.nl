@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
+  <url>
+  <loc>https://www.beingfrankly.nl/blog/accessible-input-without-label/</loc>
+  <lastmod>2021-11-01T19:37:21.481Z</lastmod>
+</url>,<url>
+  <loc>https://www.beingfrankly.nl/blog/differences-between-aria-labeling-variants/</loc>
+  <lastmod>2021-11-01T19:37:21.485Z</lastmod>
+</url>,<url>
+  <loc>https://www.beingfrankly.nl/blog/rules-on-using-aria/</loc>
+  <lastmod>2021-11-01T10:29:17.036Z</lastmod>
+</url>,<url>
+  <loc>https://www.beingfrankly.nl/blog/what-why-and-how-on-labels/</loc>
+  <lastmod>2021-11-01T19:37:21.486Z</lastmod>
+</url>
 </urlset>
