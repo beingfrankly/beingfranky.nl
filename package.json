@@ -8,25 +8,26 @@
     "start": "next start",
     "export": "next export",
     "lint:staged": "lint-staged",
-    "build:sitemap": "node ./build-helpers/generate-sitemap.ts",
+    "build:sitemap": "node ./build-helpers/generate-sitemap.js",
     "prebuild": "npm run build:sitemap",
     "build": "next build"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.2.0",
+    "esbuild": "^0.12.29",
     "gray-matter": "^4.0.3",
-    "next": "10.2.0",
-    "next-mdx-remote": "^3.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "mdx-bundler": "^6.0.2",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.0",
+    "@types/react": "^17.0.33",
     "autoprefixer": "^10.2.5",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.3",
     "postcss": "^8.2.15",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.2",
+    "typescript": "^4.4.4"
   }
 }

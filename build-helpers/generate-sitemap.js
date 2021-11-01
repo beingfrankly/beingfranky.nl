@@ -1,6 +1,6 @@
-const fs = require("fs");
+const fs = require('fs');
 const path = require('path');
-const { getAllPosts } = require('../utils/mdxUtils');
+const { getAllPosts } = require('../utils/mdx');
 
 const SITEMAP_PATH = path.join(process.cwd(), 'public')
 const DOMAIN = 'https://www.beingfrankly.nl';
@@ -22,8 +22,8 @@ const loc = `${DOMAIN}/blog/${post.slug}/`;
 
 const createSitemap = (post) => {
   return {
-    slug: encodeURI(post.data.slug),
-    lastmod: post.data.updatedOn
+    slug: encodeURI(post.frontmatter.slug),
+    lastmod: post.frontmatter.updatedOn
   }
 }
 
@@ -33,7 +33,7 @@ const nodes = posts.map(post => xmlUrlNode(post))
 const generateSitemap = () => {
       fs.writeFile(`${SITEMAP_PATH}/sitemap.xml`, xmlUrlWrapper(nodes), (err) => {
         if (err) throw err;
-          console.log('The file has been saved!');
+        console.log('The file has been saved!');
       })
     }
 
