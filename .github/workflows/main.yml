@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository and submodule
         uses: actions/checkout@v2.3.5
         with:
-          submodule: recursive
+          submodules: recursive
           token: ${{ secrets.ACCESS_TOKEN }}
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.4.1
