@@ -5,7 +5,7 @@ import { getAllPosts } from '../utils/mdx.js'
 export default function Home({posts}) {
   return (
     <>
-      <h1>Latest blogs</h1>
+     <h1>Latest blogs</h1>
       <ul>
         {posts.map(post => {
           return (<li key={post.frontmatter.slug}><Link href={`/blog/${encodeURIComponent(post.frontmatter.slug)}`}><a>{post.frontmatter.title}</a></Link></li>)
