@@ -3,12 +3,21 @@ const path = require('path');
 const { getAllPosts } = require('../utils/mdx');
 
 const SITEMAP_PATH = path.join(process.cwd(), 'public')
-const DOMAIN = 'https://www.beingfrankly.nl';
-const XML_HEADER = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
+const DOMAIN = 'https://beingfrankly.nl';
+const XML_HEADER = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">`;
+
+const HOME_NODE = `<url>
+  <loc>https://beingfrankly.nl/</loc>
+</url>`;
+
+const BLOG_NODE = `<url>
+  <loc>https://beingfrankly.nl/blog/</loc>
+</url>`;
 
 const xmlUrlWrapper = nodes => `${XML_HEADER}
   ${nodes}
+  ${BLOG_NODE}
+  ${HOME_NODE}
 </urlset>`;
 
 const xmlUrlNode = (post) => {
@@ -28,7 +37,7 @@ const createSitemap = (post) => {
 }
 
 const posts = getAllPosts().map(post => createSitemap(post));
-const nodes = posts.map(post => xmlUrlNode(post))
+const nodes = posts.map(post => xmlUrlNode(post)).join('');
 
 const generateSitemap = () => {
       fs.writeFile(`${SITEMAP_PATH}/sitemap.xml`, xmlUrlWrapper(nodes), (err) => {
