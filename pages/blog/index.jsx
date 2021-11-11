@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import { getAllPosts } from '../../utils/mdx.js'
+import { getAllPosts } from '../../utils/mdx'
 
 export default function Blog({posts}) {
   return (

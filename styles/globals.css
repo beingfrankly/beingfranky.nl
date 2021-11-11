@@ -1,13 +1,56 @@
-@import './remedy.css';
-@import './typography.css';
+@import "~normalize.css/normalize.css";
+@import "./typography.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --font-family-mono: 'JetBrains Mono', monospace;
+  --font-family-serif: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --background-color: #fff;
+  --color-text: #1F2937;
+  --p-1: 1rem;
+  --p-2: 2rem;
+  --mb: 1.5rem;
+
+  --color-text-gray-100: #F3F4F6;
+  --color-text-gray-200: #E5E7EB;
+  --color-text-gray-300: #D1D5DB;
+  --color-text-gray-400: #9CA3AF;
+  --color-text-gray-500: #6B7280;
+  --color-text-gray-600: #4B5563;
+  --color-text-gray-700: #374151;
+  --color-text-gray-800: #1F2937;
+  --color-text-gray-900: #111827;
+
+  --media-screen-sm: 640px;
+  --media-screen-md: 768px;
+  --media-screen-lg: 1024px;
+
+  --font-size-lg: 20px;
+  --font-size-md: 18px;
+  --font-size-sm: 16px;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: var(--font-size-sm);
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: var(--font-size-lg);
+  }
+}
 
 body {
-  font-family: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  @apply subpixel-antialiased;
+  font-family: var(--font-family-serif);
+  font-weight: 400;
+  color: var(--color-text-gray-800);
 }
 
 #__next {
@@ -15,7 +58,7 @@ body {
   min-height: 100vh;
   grid-template-columns:
     1fr
-    min(65ch, 100%)
+    min(55ch, 100%)
     1fr;
   grid-template-rows:
     auto
@@ -25,13 +68,25 @@ body {
 
 #__next > main {
   grid-column: 2;
+  padding: var(--p-2);
 }
 
 nav, footer {
-  width: 100%;
   grid-column: 1 / -1;
 }
 
-nav > a {
-  @apply text-lg;
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--p-1);
+  padding: var(--p-1);
+}
+
+footer {
+  display: flex;
+  padding: var(--p-1);
+}
+
+nav > a:not(:hover) {
+  text-decoration: none;
 }
