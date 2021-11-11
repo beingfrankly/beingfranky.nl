@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require("path");
 const matter = require("gray-matter");
 const { bundleMDX } = require("mdx-bundler");
+const remarkPrism = require("remark-prism")
 
 const ROOT = process.cwd();
 const POSTS_PATH = path.join(process.cwd(), "beingfrankly-content");
@@ -28,7 +29,9 @@ const getCompiledMDX = async (content) => {
     );
   }
   // Add your remark and rehype plugins here
-  const remarkPlugins = [];
+  const remarkPlugins = [
+    remarkPrism
+  ];
   const rehypePlugins = [];
 
   try {

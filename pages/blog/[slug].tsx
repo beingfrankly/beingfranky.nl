@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import { getMDXComponent } from 'mdx-bundler/client'
 import React from 'react'
-import { getAllPosts, getSinglePost } from '../../utils/mdx.js'
+import { getAllPosts, getSinglePost } from '../../utils/mdx'
 
 export const Post = ({ code, frontmatter, canonicalUrl }) => {
   const Component = React.useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <div className="blog-container">
+    <article>
 
       <Head>
         <title key="title">{frontmatter.title} | BeingFrankly</title>
@@ -23,7 +23,7 @@ export const Post = ({ code, frontmatter, canonicalUrl }) => {
       </Head>
 
       <Component />
-    </div>
+    </article>
   )
 }
 

@@ -1,11 +1,9 @@
 h1, h2, h3, h4, h5 {
-  margin: 3rem 0 1.38rem;
   font-weight: 700;
-  line-height: 1.3;
 }
 
 h1 {
-  margin-top: 0;
+  text-align: center;
   font-size: 1.802rem;
 }
 
@@ -23,20 +21,9 @@ h4 {font-size: 1.266rem;}
 
 h5 {font-size: 1.125rem;}
 
-code:not([class*="language-"]) {
-  font-family: var(--font-family-mono);
-  font-size: 0.8rem;
-  background: #E5E7EB;
-  border-radius: 4px;
-  padding: 2px 6px;
-}
 
 p:not(:last-of-type) {
   margin-bottom: 2rem;
-}
-
-p {
-  line-height: 32px;
 }
 
 p::before {
