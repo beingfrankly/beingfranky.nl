@@ -5,6 +5,7 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <a href="#main" className="skip-link visually-hidden">Skip to main content</a>
       <Head>
           <title key="title">BeingFrankly</title>
           <link rel="canonical" href="https://beingfrankly.nl" key="canonical" />

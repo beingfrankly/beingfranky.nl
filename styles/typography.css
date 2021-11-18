@@ -1,15 +1,22 @@
-h1, h2, h3, h4, h5 {
+:is(h1, h2, h3) {
+  line-height: 1.3;
+}
+
+:is(h1, h2, h3, h4, h5) {
   font-weight: 700;
 }
 
+:is(h2, h3):not(:first-child) {
+  margin-top: var(--p-2);
+}
+
 h1 {
-  text-align: center;
   font-size: 1.802rem;
 }
 
 @media screen and (min-width: 40em) {
   h1 {
-    font-size: 2.857rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -40,6 +47,8 @@ p::after {
 
 blockquote {
   margin-left: var(--p-8);
+
+  
 }
 
 blockquote p {
