@@ -65,6 +65,10 @@ const getSinglePost = async (slug) => {
   };
 };
 
+const getCreationDate = (post) => {
+  return fs.statSync(path.join(POSTS_PATH, post)).birthtime.toISOString();
+}
+
 const getAllPosts = () => {
   return fs
     .readdirSync(POSTS_PATH)
@@ -72,6 +76,9 @@ const getAllPosts = () => {
     .map((fileName) => {
       const source = getFileContent(fileName);
       const { data } = matter(source);
+      data.createdOn = getCreationDate(fileName);
+
+      console.log(data);
 
       return {
         path: fileName,
@@ -80,4 +87,8 @@ const getAllPosts = () => {
     });
 };
 
-module.exports = { getSinglePost, getAllPosts }
+
+
+getAllPosts();
+
+module.exports = { getSinglePost, getAllPosts, getCreationDate };

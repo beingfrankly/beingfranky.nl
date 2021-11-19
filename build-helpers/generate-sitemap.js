@@ -30,9 +30,11 @@ const loc = `${DOMAIN}/blog/${post.slug}/`;
 };
 
 const createSitemap = (post) => {
+  const lastmod = (post.frontmatter?.updatedOn) ? post.frontmatter.updatedOn : new Date(post.frontmatter.createdOn);
+
   return {
     slug: encodeURI(post.frontmatter.slug),
-    lastmod: post.frontmatter.updatedOn
+    lastmod: lastmod
   }
 }
 
