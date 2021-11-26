@@ -69,24 +69,12 @@ h4 {font-size: 1.266rem;}
 h5 {font-size: 1.125rem;}
 
 p {
-  letter-spacing: -0.014em;
+  letter-spacing: -0.017em;
 }
 
 p:not(:last-of-type) {
   margin-bottom: 2rem;
 }
-
-/* p::before {
-  content: "";
-  margin-bottom: -0.4045em;
-  display: table;
-}
-
-p::after {
-  content: "";
-  margin-top: -0.5275em;
-  display: table;
-} */
 
 blockquote {
   margin-left: var(--p-8);

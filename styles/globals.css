@@ -63,7 +63,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 html {
   font-size: var(--font-size-md);
-  font-feature-settings: "salt";
+  font-feature-settings: "ss01, cv10, cv11";
 }
 
 @media (min-width: 768px) {
