@@ -78,8 +78,6 @@ const getAllPosts = () => {
       const { data } = matter(source);
       data.createdOn = getCreationDate(fileName);
 
-      console.log(data);
-
       return {
         path: fileName,
         frontmatter: data
