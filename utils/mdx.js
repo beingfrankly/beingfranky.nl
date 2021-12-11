@@ -1,8 +1,8 @@
-const fs = require('fs');
+const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 const { bundleMDX } = require("mdx-bundler");
-const remarkPrism = require("remark-prism")
+const remarkPrism = require("remark-prism");
 
 const ROOT = process.cwd();
 const POSTS_PATH = path.join(process.cwd(), "beingfrankly-content");
@@ -28,10 +28,8 @@ const getCompiledMDX = async (content) => {
       "esbuild"
     );
   }
-  // Add your remark and rehype plugins here
-  const remarkPlugins = [
-    remarkPrism
-  ];
+
+  const remarkPlugins = [remarkPrism];
   const rehypePlugins = [];
 
   try {
@@ -55,7 +53,7 @@ const getCompiledMDX = async (content) => {
 };
 
 const getSinglePost = async (slug) => {
-  const post = getAllPosts().find(p => p.frontmatter.slug === slug)
+  const post = getAllPosts().find((p) => p.frontmatter.slug === slug);
   const source = getFileContent(post.path);
   const { code, frontmatter } = await getCompiledMDX(source);
 
@@ -67,7 +65,7 @@ const getSinglePost = async (slug) => {
 
 const getCreationDate = (post) => {
   return fs.statSync(path.join(POSTS_PATH, post)).birthtime.toISOString();
-}
+};
 
 const getAllPosts = () => {
   return fs
@@ -80,12 +78,10 @@ const getAllPosts = () => {
 
       return {
         path: fileName,
-        frontmatter: data
+        frontmatter: data,
       };
     });
 };
-
-
 
 getAllPosts();
 
