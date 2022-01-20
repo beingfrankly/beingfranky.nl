@@ -8,7 +8,7 @@ export default function Blog({ posts }) {
     <>
       <div className="container flex flex-col items-center px-6 mx-auto">
         <h1 className="mb-10 text-4xl font-bold">Blog</h1>
-        <ul role="list" className="inline-flex flex-col w-6/12 gap-6">
+        <ul role="list" className="inline-flex flex-col w-full gap-6 lg:w-6/12">
           {posts.map((post) => {
             return (
               <li key={post.frontmatter.slug}>

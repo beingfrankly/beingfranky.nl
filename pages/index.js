@@ -6,7 +6,7 @@ import { format } from "date-fns-tz";
 export default function Home({ posts }) {
   return (
     <>
-      <div className="grid h-full grid-cols-2">
+      <div className="grid h-full grid-cols-1 grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
         <section className="grid items-center place-items-center">
           <div className="w-9/12">
             <div className="mb-2 text-2xl text-slate-600">Hi, I’m</div>
