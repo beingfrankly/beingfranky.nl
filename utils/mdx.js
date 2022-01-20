@@ -67,8 +67,8 @@ const getCreationDate = (post) => {
   return fs.statSync(path.join(POSTS_PATH, post)).birthtime.toISOString();
 };
 
-const getAllPosts = () => {
-  return fs
+const getAllPosts = (limit) => {
+  const posts = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.md?$/.test(path))
     .map((fileName) => {
@@ -80,9 +80,21 @@ const getAllPosts = () => {
         path: fileName,
         frontmatter: data,
       };
+    })
+    .sort((a, b) => {
+      return (
+        new Date(b.frontmatter.publishedOn) -
+        new Date(a.frontmatter.publishedOn)
+      );
     });
+
+
+  if (limit) {
+    return posts.slice(0, limit);
+  }
+
+  return posts;
 };
 
-getAllPosts();
 
 module.exports = { getSinglePost, getAllPosts, getCreationDate };
