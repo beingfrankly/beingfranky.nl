@@ -5,7 +5,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Navigation></Navigation>
-      <main className="w-full h-full" id="main">{children}</main>
+      <main className="grid w-full h-full" id="main">
+        {children}
+      </main>
       <Footer></Footer>
     </>
   );

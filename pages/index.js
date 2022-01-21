@@ -6,31 +6,34 @@ import { format } from "date-fns-tz";
 export default function Home({ posts }) {
   return (
     <>
-      <div className="grid h-full grid-cols-1 grid-rows-2 xl:grid-cols-2 xl:grid-rows-1">
+      <div className="grid grid-flow-row gap-10 md:grid-flow-col place-items-center auto-rows-auto">
         <section className="grid items-center place-items-center">
-          <div className="w-9/12">
-            <div className="mb-2 text-2xl text-slate-600">Hi, I’m</div>
-            <span className="inline-flex items-center">
-              <h1
-                className="relative mb-4 text-6xl font-bold"
-                aria-describedby="introduction"
-              >
-                Frank
-              </h1>
-            </span>
-            <p className="mb-6 text-5xl font-bold">
+          <div className="px-6 xl:w-9/12">
+            <div className="mb-1 text-xl md:text-2xl md:mb-2 text-slate-600">
+              Hi, I’m
+            </div>
+            <h1
+              className="mb-2 text-4xl font-bold md:mb-4 md:text-6xl"
+              aria-describedby="introduction"
+            >
+              Frank
+            </h1>
+            <p className="mb-4 text-3xl font-bold md:mb-6 md:text-5xl">
               I create content on accessibility
             </p>
-            <p className="text-3xl text-slate-600" id="introduction">
+            <p className="text-xl md:text-3xl text-slate-600" id="introduction">
               I’m a frontend developer & consultant based in The Netherlands.
               I’m currently writing about accessibility.
             </p>
           </div>
         </section>
 
-        <aside className="flex flex-col items-center p-10">
+        <aside className="flex flex-col px-6 md:items-center">
           <h2 className="mb-4 text-2xl font-semibold">Recently published</h2>
-          <ul role="list" className="inline-flex flex-col w-9/12 gap-10">
+          <ul
+            role="list"
+            className="inline-flex flex-col gap-6 lg:gap-10 xl:w-9/12"
+          >
             {posts.map((post) => {
               return (
                 <li key={post.frontmatter.slug}>
