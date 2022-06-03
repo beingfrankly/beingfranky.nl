@@ -36,7 +36,7 @@ export const Post = ({ code, frontmatter, canonicalUrl }) => {
   );
 
   return (
-    <article className="mx-auto px-6 max-w-[65ch] prose prose-slate lg:prose-p:text-lg lg:prose-ul:text-lg lg:prose-ol:text-lg prose-code:bg-slate-100 prose-code:px-1 prose-code:py-1 prose-code:rounded-md">
+    <article className="mx-auto px-6 max-w-full md:max-w-[65ch] prose prose-slate lg:prose-p:text-lg lg:prose-ul:text-lg lg:prose-ol:text-lg prose-code:bg-slate-100 prose-code:px-1 prose-code:py-1 prose-code:rounded-md">
       <Head>
         <title key="title">{frontmatter.title} | BeingFrankly</title>
         <link rel="canonical" href={canonicalUrl} key="canonical" />

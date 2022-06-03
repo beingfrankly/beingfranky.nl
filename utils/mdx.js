@@ -5,7 +5,7 @@ const { bundleMDX } = require("mdx-bundler");
 const remarkPrism = require("remark-prism");
 
 const ROOT = process.cwd();
-const POSTS_PATH = path.join(process.cwd(), "beingfrankly-content");
+const POSTS_PATH = path.join(process.cwd(), "content");
 
 const getFileContent = (filename) => {
   return fs.readFileSync(path.join(POSTS_PATH, filename), "utf8");
